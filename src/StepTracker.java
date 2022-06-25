@@ -22,9 +22,9 @@ public class StepTracker {
         //Количество пройденных шагов по дням
         for (int i = 0; i<30; i++) {
             if (i<29){
-                System.out.print(i+1 + "-й день: " + tableDays[i][month] + ", ");
+                System.out.print(i+1 + " день: " + tableDays[i][month] + ", ");
             } else {
-                System.out.println(i+1 + "-й день: " + tableDays[i][month]);
+                System.out.println(i+1 + " день: " + tableDays[i][month]);
             }
 
         }
@@ -33,7 +33,7 @@ public class StepTracker {
         for (int i = 0; i<30; i++){
             count += tableDays[i][month];
         }
-        System.out.println("Общее количество шагов за " + month + " месяц: " + count);
+        System.out.println("Общее количество шагов: " + count);
 
         //Максимальное пройденное количество шагов в месяце
         for (int i = 0; i<30; i++){
