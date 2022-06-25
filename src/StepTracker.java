@@ -17,9 +17,16 @@ public class StepTracker {
 
         Converter converter = new Converter();
 
+        System.out.println("Вы выбрали " + month + "-й месяц!");
+
         //Количество пройденных шагов по дням
         for (int i = 0; i<30; i++) {
-            System.out.print(i+1 + "-й день: " + tableDays[i][month] + ", ");
+            if (i<29){
+                System.out.print(i+1 + "-й день: " + tableDays[i][month] + ", ");
+            } else {
+                System.out.println(i+1 + "-й день: " + tableDays[i][month]);
+            }
+
         }
 
         //Общее количество шагов за месяц
@@ -34,19 +41,19 @@ public class StepTracker {
                 maxStep = tableDays[i][month];
             }
         }
-        System.out.println("Максимальное пройденное количество шагов в " + month + "-м месяце: " + maxStep);
+        System.out.println("Максимальное пройденное количество шагов: " + maxStep);
 
         //Среднее количество шагов
-        System.out.println("Среднее пройденное количество шагов в " + month + "-м месяце: " + count/30);
+        System.out.println("Среднее число шагов: " + count/30);
 
         //Пройденная дистанция (в км)
-        System.out.println("Общая пройденная дистанция в " + month + "-м месяце: " + converter.stepToDistance(count)/1000 + " км");
+        System.out.println("Общая пройденная дистанция: " + converter.stepToDistance(count)/1000 + " км");
 
         //Количество сожжённых килокалорий
-        System.out.println("Общее количество сожженных килокалорий в " + month + "-м месяце: " + converter.stepToCalorie(count) + " ККал");
+        System.out.println("Количество сожженных килокалорий: " + converter.stepToCalorie(count) + " ККал");
 
         //Лучшая серия
-        System.out.println("Лучшая серия шагов в " + month + "-м месяце: " + bestSeriesSteps(month));
+        System.out.println("Лучшая серия шагов: " + bestSeriesSteps(month));
     }
 
     int bestSeriesSteps(int month){

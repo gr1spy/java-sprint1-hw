@@ -13,8 +13,22 @@ public class Main {
             if (userInput == 1) {
                 System.out.println("Введите номер месяца (0 - январь ... 11 - декабрь):\n");
                 int month = scanner.nextInt();
+                if (month < 0){
+                    System.out.println("Такого месяца не существует, попробуйте снова!\n");
+                    continue;
+                } else if(month > 11){
+                    System.out.println("Такого месяца не существует, попробуйте снова!\n");
+                    continue;
+                }
                 System.out.println("Введите число месяца (с 1 по 30):\n");
                 int day = scanner.nextInt();
+                if (day < 1){
+                    System.out.println("Такого дня не существует, попробуйте снова!\n");
+                    continue;
+                } else if(day > 30){
+                    System.out.println("Такого дня не существует, попробуйте снова!\n");
+                    continue;
+                }
                 System.out.println("Введите число шагов за этот день:\n");
                 int step = scanner.nextInt();
                 if (step < 0){
@@ -26,10 +40,21 @@ public class Main {
             } else if (userInput == 2) {
                 System.out.println("Введите номер месяца (0 - январь ... 11 - декабрь):\n");
                 int month = scanner.nextInt();
+                if (month < 0){
+                    System.out.println("Такого месяца не существует, попробуйте снова!\n");
+                    continue;
+                } else if(month > 11){
+                    System.out.println("Такого месяца не существует, попробуйте снова!\n");
+                    continue;
+                }
                 stepTracker.statusForMonth(month);
             } else if (userInput == 3) {
                 System.out.println("Выберите новую цель шагов в день:\n");
                 int countStepPerDay = scanner.nextInt();
+                if (countStepPerDay < 0){
+                    System.out.println("Цель шагов не может быть отрицательной, попробуйте снова!\n");
+                    continue;
+                }
                 stepTracker.maxStepPerDay(countStepPerDay);
             } else if (userInput == 0) {
                 System.out.println("Выход");
