@@ -38,10 +38,8 @@ public class Main {
                 System.out.println("Извините, такой команды пока нет.");
             }
 
-            // обработка разных случаев
-
-            printMenu(); // печатаем меню ещё раз перед завершением предыдущего действия
-            userInput = scanner.nextInt(); // повторное считывание данных от пользователя
+            printMenu();
+            userInput = scanner.nextInt();
         }
         System.out.println("Программа завершена");
     }

@@ -7,12 +7,6 @@ public class StepTracker {
         tableDays = new int[30][12];
     }
 
-//    for (int i=0; i < tableDays.length; i++){
-//        for (int j=0; j < tableDays[i].length; j++){
-//            tableDays[j][i] = 0;
-//        }
-//    }
-
     void selectPushDay(int month, int day, int step){
         tableDays[day][month] = step;
     }
