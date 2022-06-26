@@ -69,6 +69,9 @@ public class StepTracker {
                 }
             }
         }
+        if (series < seriesBuf) {
+            series = seriesBuf;
+        }
         return series;
     }
 
