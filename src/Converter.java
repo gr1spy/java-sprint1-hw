@@ -1,13 +1,16 @@
 public class Converter {
-    //один шаг равен 75 см
-    //1 шаг = 50 калорий
-    //1 килокалория = 1 000 калорий
 
-    double stepToDistance(int step){
-        return step*0.75;
+    /**
+     * Шаги -> метры (один шаг равен 75 см)
+     */
+    double stepToDistance(int stepFinal){
+        return stepFinal*0.75/1000;
     }
 
-    double stepToCalorie(int step){
-        return step*0.05;
+    /**
+     * Шаги -> калории (1 шаг = 50 калорий)
+     */
+    double stepToCalorie(int stepFinal){
+        return stepFinal*0.05;
     }
 }
