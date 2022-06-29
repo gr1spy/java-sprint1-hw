@@ -33,7 +33,7 @@ public class Main {
                 int step = scanner.nextInt();
                 if (step < 0){
                     System.out.println("Введите положительное число!\n");
-                    break;
+                    continue;
                 } else {
                     stepTracker.selectPushDay(month, day-1, step);
                 }
@@ -66,14 +66,15 @@ public class Main {
             printMenu();
             userInput = scanner.nextInt();
         }
+        scanner.close();
         System.out.println("Программа завершена");
     }
 
     public static void printMenu() {
-        System.out.println("Что вы хотите сделать? ");
-        System.out.println("1 - Ввести количество шагов за определённый день");
-        System.out.println("2 - Напечатать статистику за определённый месяц");
-        System.out.println("3 - Изменить цель по количеству шагов в день");
-        System.out.println("0 - Выход");
+        System.out.println("Что вы хотите сделать? \n" +
+                            "1 - Ввести количество шагов за определённый день\n" +
+                            "2 - Напечатать статистику за определённый месяц\n" +
+                            "3 - Изменить цель по количеству шагов в день\n" +
+                            "0 - Выход");
     }
 }
