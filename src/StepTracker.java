@@ -1,16 +1,14 @@
 public class StepTracker {
     int maxStepPerDay = 10000;
-    int[][] tableDays;
-
-
-    StepTracker(){
-        tableDays = new int[30][12];
-    }
+    int[][] tableDays = new int[30][12];
 
     void selectPushDay(int month, int day, int step){
         tableDays[day][month] = step;
     }
 
+    /**
+     * statusForMonth() выводит статистику по выбранному месяцу
+     */
     void statusForMonth(int month){
         int count = 0;
         int maxStep = 0;
@@ -47,7 +45,7 @@ public class StepTracker {
         System.out.println("Среднее число шагов: " + count/30);
 
         //Пройденная дистанция (в км)
-        System.out.println("Общая пройденная дистанция: " + converter.stepToDistance(count)/1000 + " км");
+        System.out.println("Общая пройденная дистанция: " + converter.stepToDistance(count) + " км");
 
         //Количество сожжённых килокалорий
         System.out.println("Количество сожженных килокалорий: " + converter.stepToCalorie(count) + " ККал");
@@ -56,6 +54,11 @@ public class StepTracker {
         System.out.println("Лучшая серия шагов: " + bestSeriesSteps(month));
     }
 
+    /**
+     * bestSeriesSteps() - вычисляет наибольшее количество подряд идущих дней, при условии,
+     * что каждый из этих дней совпадает или превосходит по количеству
+     * шагов дневную цель maxStepPerDay.
+     */
     int bestSeriesSteps(int month){
         int seriesBuf = 0;
         int series = 0;
@@ -75,6 +78,9 @@ public class StepTracker {
         return series;
     }
 
+    /**
+     * Новая дневная цель шагов
+     */
     void maxStepPerDay(int countStepPerDay){
         maxStepPerDay = countStepPerDay;
     }
